@@ -1,0 +1,17 @@
+<ul id="todoList">
+    <li class="todo">Buy milk <button class="delete">×</button></li>
+    <li class="todo">Walk dog <button class="delete">×</button></li>
+</ul>
+
+<script>
+    let list = document.getElementById('todoList');
+    
+    // ONE listener handles all delete buttons
+    list.addEventListener('click', function(e) {
+        // Check if delete button was clicked
+        if (e.target.classList.contains('delete')) {
+            // Remove parent li
+            e.target.parentElement.remove();
+        }
+    });
+</script>

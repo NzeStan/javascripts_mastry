@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz - JavaScript Mastery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 JavaScript Quiz</h1>
+            <p class="subtitle">Module 03 Project</p>
+        </header>
+
+        <div class="quiz-app">
+            <!-- Start Screen -->
+            <div id="startScreen" class="screen active">
+                <div class="welcome">
+                    <h2>Welcome to the JavaScript Quiz!</h2>
+                    <p>Test your knowledge with 10 JavaScript questions.</p>
+                    <ul class="rules">
+                        <li>✓ 10 multiple choice questions</li>
+                        <li>✓ Select the best answer for each</li>
+                        <li>✓ Instant feedback on your answers</li>
+                        <li>✓ See your final score at the end</li>
+                    </ul>
+                    <button id="startBtn" class="btn btn-primary">Start Quiz</button>
+                </div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quizScreen" class="screen">
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="questionNumber">Question 1 of 10</span>
+                    </div>
+                </div>
+
+                <!-- Question Container -->
+                <div class="question-container">
+                    <h2 id="question" class="question-text">Question will appear here</h2>
+                </div>
+
+                <!-- Answers Container -->
+                <div id="answersContainer" class="answers-container">
+                    <!-- Answer buttons will be generated here -->
+                </div>
+
+                <!-- Next Button -->
+                <div class="button-container">
+                    <button id="nextBtn" class="btn btn-next" style="display: none;">
+                        Next Question →
+                    </button>
+                </div>
+
+                <!-- Score Display -->
+                <div class="score-display">
+                    <span>Score: <strong id="currentScore">0</strong></span>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="resultsScreen" class="screen">
+                <div class="results">
+                    <h2>Quiz Complete! 🎉</h2>
+                    
+                    <div class="score-circle">
+                        <svg width="200" height="200">
+                            <circle cx="100" cy="100" r="90" class="score-circle-bg"></circle>
+                            <circle id="scoreCircle" cx="100" cy="100" r="90" class="score-circle-fill"></circle>
+                        </svg>
+                        <div class="score-text">
+                            <div id="finalScore" class="final-score">0/10</div>
+                            <div id="percentage" class="percentage">0%</div>
+                        </div>
+                    </div>
+
+                    <div id="resultMessage" class="result-message">
+                        Great job!
+                    </div>
+
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Correct Answers:</span>
+                            <span id="correctCount" class="detail-value">0</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Wrong Answers:</span>
+                            <span id="wrongCount" class="detail-value">0</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Accuracy:</span>
+                            <span id="accuracy" class="detail-value">0%</span>
+                        </div>
+                    </div>
+
+                    <button id="restartBtn" class="btn btn-primary">Try Again</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <p>💡 <strong>Tip:</strong> Read each question carefully before answering!</p>
+            <p>🎯 Built with: DOM Selection, Manipulation & Event Handling!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
