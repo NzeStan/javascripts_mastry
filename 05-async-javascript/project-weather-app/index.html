@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - JavaScript Mastery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☁️ Weather App</h1>
+            <p class="subtitle">Module 05 Project - Async JavaScript</p>
+        </header>
+
+        <div class="app">
+            <!-- Search Section -->
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name..." 
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="btn btn-search">
+                    <span class="btn-text">Search</span>
+                    <span class="btn-icon">🔍</span>
+                </button>
+            </div>
+
+            <!-- Unit Toggle -->
+            <div class="unit-toggle">
+                <button id="celsiusBtn" class="unit-btn active">°C</button>
+                <button id="fahrenheitBtn" class="unit-btn">°F</button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error" class="error hidden">
+                <div class="error-icon">❌</div>
+                <p id="errorMessage"></p>
+            </div>
+
+            <!-- Current Weather -->
+            <div id="currentWeather" class="current-weather hidden">
+                <div class="weather-header">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="currentDate">Date</p>
+                </div>
+
+                <div class="weather-main">
+                    <div class="weather-icon-container">
+                        <img id="weatherIcon" src="" alt="Weather icon">
+                    </div>
+                    <div class="weather-info">
+                        <div class="temperature">
+                            <span id="temperature">--</span>
+                            <span id="unit">°C</span>
+                        </div>
+                        <p id="weatherDescription">Description</p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">🌡️</span>
+                        <div class="detail-info">
+                            <span class="detail-label">Feels Like</span>
+                            <span id="feelsLike" class="detail-value">--°</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-icon">💧</span>
+                        <div class="detail-info">
+                            <span class="detail-label">Humidity</span>
+                            <span id="humidity" class="detail-value">--%</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-icon">💨</span>
+                        <div class="detail-info">
+                            <span class="detail-label">Wind Speed</span>
+                            <span id="windSpeed" class="detail-value">-- km/h</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-icon">🧭</span>
+                        <div class="detail-info">
+                            <span class="detail-label">Pressure</span>
+                            <span id="pressure" class="detail-value">-- hPa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div id="forecast" class="forecast hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast cards will be added here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <p>💡 <strong>Tip:</strong> Try searching for cities like "London", "Tokyo", or "Lagos"!</p>
+            <p>🎯 Built with: Fetch API, Async/Await, Promises!</p>
+            <p style="font-size: 0.85em; opacity: 0.8;">Powered by <a href="https://openweathermap.org/" target="_blank" style="color: white;">OpenWeatherMap</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
